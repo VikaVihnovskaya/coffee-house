@@ -141,9 +141,8 @@ body {
 
 .nav-item a {
   text-decoration: none;
-  font-family: Inter;
+  font-family: Inter, sans-serif;
   color: #403F3D;
-  font-family: Inter;
   font-size: 16px;
   font-weight: 600;
   line-height: 150%;
@@ -160,9 +159,8 @@ body {
   gap: 8px;
   margin-top: -2px;
   text-decoration: none;
-  font-family: Inter;
+  font-family: Inter, sans-serif;
   color: #403F3D;
-  font-family: Inter;
   font-size: 16px;
   font-weight: 600;
   line-height: 150%;
@@ -219,7 +217,7 @@ body {
 }
 
 .main-text {
-  font-family: Inter;
+  font-family: Inter, sans-serif;
   font-size: 60px;
   color: #403F3D;
   font-weight: 600;
@@ -235,7 +233,7 @@ body {
 }
 
 .additional-text {
-  font-family: Inter;
+  font-family: Inter, sans-serif;
   font-size: 16px;
   color: #403F3D;
   font-weight: 400;
@@ -284,7 +282,7 @@ body {
 
 .additional-text-2 {
   text-align: center;
-  font-family: Inter;
+  font-family: Inter, sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 125%;
@@ -391,7 +389,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 0%;
+  width: 0;
   height: 4px;
   border-radius: 100px;
   background-color: #665F55;
@@ -499,7 +497,7 @@ body {
 
 .app-description-block :nth-child(1) {
   color: #403F3D;
-  font-family: Inter;
+  font-family: Inter, sans-serif;
   font-size: 10px;
   font-weight: 600;
   line-height: 140%;
@@ -508,7 +506,7 @@ body {
 
 .app-description-block :nth-child(2) {
   color: #403F3D;
-  font-family: Inter;
+  font-family: Inter, sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 150%;
@@ -613,7 +611,7 @@ body {
   width: max-content;
   color: #E1D4C9;
   text-decoration: none;
-  font-family: Inter;
+  font-family: Inter, sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
