@@ -147,15 +147,15 @@ function moveSlides(event) {
       }
     }
   }
-  document.querySelector('.pag-active').insertAdjacentHTML('afterbegin', '<div class="pag-progress style="width: 0%;""></div>');
+  document.querySelector('.pag-active').insertAdjacentHTML('afterbegin', '<div class="pag-progress style=" style="width: 0%;"></div>');
 }
 
 function checkSlideTranslate() {
   const fullProperty = slides[0].style.transform;
   let result = '';
-  for (let i = 0; i < fullProperty.length; i++) {
-    if (!isNaN(Number(fullProperty[i]))|| fullProperty[i] === '-') {
-      result += fullProperty[i];
+  for (const element of fullProperty) {
+    if (!isNaN(Number(element)) || element === '-') {
+      result += element;
     }
   }
   return Number(result);
@@ -212,7 +212,6 @@ function nextSlideAuto() {
   }, 100);
 }
 
-// touch support \/
 
 let x1 = 0;
 let x2 = 0;
@@ -234,7 +233,9 @@ function touchMoveAction(event) {
   const maxCoord = Math.max(x1, moveCoord);
   const minCoord = Math.min(x1, moveCoord);
   moveDifference = maxCoord - minCoord;
+  let slide;
   if (x1 < moveCoord) {
+
     if (moveDifference <= 80) {
       for (slide of slides) {
         slide.style.left = moveDifference + 'px';
@@ -244,15 +245,13 @@ function touchMoveAction(event) {
         slide.style.left = '80px';
       }
     }
+  } else if (moveDifference <= 80) {
+    for (slide of slides) {
+      slide.style.left = `-${moveDifference}px`;
+    }
   } else {
-    if (moveDifference <= 80) {
-      for (slide of slides) {
-        slide.style.left = `-${moveDifference}px`;
-      }
-    } else {
-      for (slide of slides) {
-        slide.style.left = '-80px';
-      }
+    for (slide of slides) {
+      slide.style.left = '-80px';
     }
   }
 }
@@ -278,6 +277,7 @@ function mouseLeaveAction() {
 sliderWrapper.addEventListener('touchend', touchEndAction);
 
 function touchEndAction(event) {
+  let slide;
   for (slide of slides) {
     slide.style.left = '0';
   }
@@ -292,10 +292,8 @@ function touchEndAction(event) {
       const clickEvent = new MouseEvent('click', {clientX: 5});
       leftArrow.dispatchEvent(clickEvent);
     }
-  } else {
-    if (!timer) {
-      progressInterval = setInterval(updateProgress, 100);
-      timer = true;
-    }
+  } else if (!timer) {
+    progressInterval = setInterval(updateProgress, 100);
+    timer = true;
   }
 }
