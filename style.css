@@ -914,3 +914,569 @@ body {
   line-height: 150%;
   transition: 0.6s;
 }
+/* Responsive */
+@media screen and (max-width: 1418px) {
+  .img-unit-1,
+  .img-unit-2,
+  .img-unit-3,
+  .img-unit-4 {
+    width: 560px;
+  }
+
+  .main-text,
+  .special-text {
+    font-size: 3.75rem;
+  }
+
+  .footer-container-2 {
+    width: 32%;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  #favorite.main-text {
+    text-align: center;
+  }
+
+  .mobile-app-section {
+    flex-direction: column;
+    gap: 100px;
+  }
+
+  .footer-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+    padding: 100px 60px;
+  }
+
+  .footer-container-1 {
+    width: 100%;
+  }
+
+  .footer-container-2 {
+    width: max-content;
+  }
+}
+
+@media screen and (max-width: 1218px) {
+  .img-unit-1,
+  .img-unit-4 {
+    width: 480px;
+    height: 530px;
+  }
+
+  .img-unit-2,
+  .img-unit-3 {
+    width: 480px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .img-unit-1,
+  .img-unit-4 {
+    width: 400px;
+    height: 400px;
+  }
+
+  .img-unit-2,
+  .img-unit-3 {
+    width: 400px;
+    height: 270px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .img-unit-1,
+  .img-unit-4 {
+    width: 330px;
+    height: 330px;
+  }
+
+  .img-unit-2,
+  .img-unit-3 {
+    width: 330px;
+    height: 200px;
+  }
+
+  .modal-menu {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .enjoy-section {
+    padding: 100px 60px;
+  }
+
+  .menu-link-enjoy span {
+    margin-right: 28px;
+  }
+
+  .menu-link-enjoy {
+    margin-right: 28px;
+  }
+
+  .enjoy-coffee-icon {
+    opacity: 1;
+  }
+
+  .left-arrow {
+    left: 0;
+  }
+
+  .right-arrow {
+    right: 0;
+  }
+
+  .img-unit-1,
+  .img-unit-2,
+  .img-unit-3,
+  .img-unit-4 {
+    background-size: 105.5%;
+  }
+
+  .mobile-app-section {
+    align-items: flex-start;
+  }
+
+  #mobile-app {
+    width: 688px;
+  }
+
+  .mobile-screens {
+    align-self: center;
+  }
+
+  .mobile-app-info h2 {
+    width: 688px;
+  }
+
+  .footer-wrapper {
+    gap: 98px;
+    height: 736px;
+  }
+
+  .footer-container-2 {
+    margin-bottom: 3px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .burger-button {
+    display: flex;
+  }
+
+  .burger-menu-content {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 100px;
+    width: 100%;
+    height: calc(100dvh - 100px);
+    overflow-y: auto;
+    padding: 60px 40px;
+    background-color: #E1D4C9;
+    transform: translateX(100%);
+    transition: 0.5s;
+  }
+
+  .burger-menu-active {
+    transform: translateX(0);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 52px;
+  }
+
+  .nav-item a,
+  .menu-link-header {
+    font-size: 32px;
+  }
+
+  .menu-link-header {
+    margin-top: -8px;
+    gap: 15px;
+  }
+
+  .header-coffee-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+  }
+
+  .about-img-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .img-unit-2,
+  .img-unit-3 {
+    display: none;
+  }
+
+  .img-unit-1,
+  .img-unit-4 {
+    width: 688px;
+    height: 590px;
+  }
+
+  .refresh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #665F55;
+    border-radius: 100px;
+  }
+
+  .item-5,
+  .item-6,
+  .item-7,
+  .item-8 {
+    display: none;
+    transition: none;
+  }
+}
+
+@media screen and (max-width: 742px) {
+  .refresh {
+    position: absolute;
+    bottom: -100px;
+  }
+
+  .footer-menu {
+    margin-top: 200px;
+  }
+}
+
+@media screen and (max-width: 732px) {
+  .mobile-app-info h2,
+  #mobile-app {
+    width: 100%;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    display: none;
+  }
+
+  .modal-img {
+    display: none;
+  }
+
+  .modal-description-block {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .price-block {
+    width: 100%;
+  }
+
+  .modal-wrapper {
+    padding: 0 19px;
+  }
+}
+
+@media screen and (max-height: 632px) {
+  .modal-menu {
+    height: 100svh;
+    overflow-y: auto;
+    border-radius: 15px;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .main {
+    padding: 0 16px;
+  }
+
+  .about-img-block {
+    width: 100%;
+  }
+
+  .img-unit-1,
+  .img-unit-2,
+  .img-unit-3,
+  .img-unit-4 {
+    width: 100%;
+    transition: none;
+  }
+
+  .mobile-screens {
+    width: 530px;
+    height: 530px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .enjoy-section {
+    height: 552px;
+    padding: 60px 16px;
+  }
+
+  .enjoy-block {
+    width: 100%;
+  }
+
+  .enjoy-block .main-text,
+  .enjoy-block .special-text {
+    font-size: 42px;
+  }
+
+  .main-text,
+  .special-text {
+    font-size: 32px;
+  }
+
+  .footer-wrapper {
+    justify-content: flex-start;
+    gap: 40px;
+    height: 526px;
+    padding: 60px 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 0px 16px;
+  }
+
+  .img-unit-1,
+  .img-unit-2,
+  .img-unit-3,
+  .img-unit-4 {
+    background-size: cover;
+  }
+
+  .footer {
+    padding: 0px 16px 40px 16px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .mobile-screens {
+    width: 348px;
+    height: 348px;
+  }
+
+  .slider-wrapper {
+    width: 348px;
+  }
+
+  .slider-img {
+    width: 348px;
+    height: 348px;
+  }
+}
+
+@media screen and (max-width: 442px) {
+  .enjoy-block .main-text {
+    line-height: 114%;
+  }
+
+  .mobile-app-section {
+    gap: 40px;
+  }
+
+  .mobile-app-links {
+    flex-direction: column;
+  }
+
+  .footer-container-1 {
+    width: 100%;
+  }
+
+  .footer-container-2 {
+    margin: 0;
+  }
+
+  .offer-buttons-wrapper {
+    gap: 6px;
+  }
+
+  .offer-section h1 {
+    width: 348px;
+  }
+
+  .modal-menu {
+    padding: 16px 0;
+  }
+
+  .modal-description-block {
+    align-items: flex-start;
+    padding: 0 16px;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .img-unit-1,
+  .img-unit-2,
+  .img-unit-3,
+  .img-unit-4 {
+    background-size: 209%;
+  }
+}
+
+@media (hover: hover) {
+  .menu-link-header {
+    cursor: pointer;
+  }
+
+  .active-menu-link-header {
+    cursor: default;
+  }
+
+  .nav-item a {
+    cursor: pointer;
+  }
+
+  .burger-button {
+    cursor: pointer;
+  }
+
+  .link:hover::after,
+  .link-footer:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  .menu-link-enjoy {
+    cursor: pointer;
+  }
+
+  .menu-link-enjoy:hover span {
+    margin-right: 28px;
+  }
+
+  .menu-link-enjoy:hover .enjoy-coffee-icon {
+    opacity: 1;
+  }
+
+  .left-arrow:hover path,
+  .right-arrow:hover path {
+    stroke: #E1D4C9;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    cursor: pointer;
+  }
+
+  .left-arrow:hover,
+  .right-arrow:hover {
+    fill: #665F55;
+  }
+
+  .img-unit-1:hover,
+  .img-unit-2:hover,
+  .img-unit-3:hover,
+  .img-unit-4:hover {
+    background-size: 100%;
+  }
+
+  .app-store-block,
+  .google-play-block {
+    cursor: pointer;
+  }
+
+  .app-store-block:hover,
+  .google-play-block:hover {
+    background-color: #665F55;
+  }
+
+  .app-store-block:hover .app-icon path,
+  .google-play-block:hover .app-icon path {
+    fill: #E1D4C9;
+  }
+
+  .app-store-block:hover .app-description-block p,
+  .google-play-block:hover .app-description-block p {
+    color: #E1D4C9;
+  }
+
+  .social-link-wrapper {
+    cursor: pointer;
+  }
+
+  .social-link-wrapper:hover {
+    background-color: #E1D4C9;
+  }
+
+  .social-link-wrapper:hover .social-link path {
+    stroke: #403F3D;
+  }
+
+  .link-footer {
+    cursor: pointer;
+  }
+
+  .offer-button,
+  .size-button,
+  .additives-button {
+    cursor: pointer;
+  }
+
+  .active-button {
+    cursor: default;
+  }
+
+  .additives-button.active-button {
+    cursor: pointer;
+  }
+
+  .offer-button:hover,
+  .size-button:hover,
+  .additives-button:hover {
+    background-color: #665F55;
+    color: #E1D4C9;
+  }
+
+  .offer-button:hover span,
+  .size-button:hover span,
+  .additives-button:hover span {
+    background-color: #E1D4C9;
+  }
+
+  .modal-close-button {
+    cursor: pointer;
+  }
+
+  .modal-close-button:hover {
+    background-color: #665F55;
+    color: #E1D4C9;
+  }
+
+  .product-item {
+    cursor: pointer;
+  }
+
+  .product-item:hover .product-img {
+    background-size: 100%;
+  }
+
+  .refresh {
+    cursor: pointer;
+  }
+}
+
+@keyframes active-button-load {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
