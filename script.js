@@ -40,12 +40,44 @@ window.addEventListener('resize', function () { // close the burger menu when go
 const leftArrow = document.querySelector('.left-arrow');
 const rightArrow = document.querySelector('.right-arrow');
 const slides = document.querySelectorAll('.slide');
-const pags = document.querySelectorAll('.pag');
+const paginations = document.querySelectorAll('.pag');
 const sliderWrapper = document.querySelector('.slider-wrapper');
 
 leftArrow.addEventListener('click', moveSlides);
 rightArrow.addEventListener('click', moveSlides);
 let timer = true;
+
+function configureSlider(currentTranslate) {
+  if (currentTranslate === -200) {
+    for (let slide of slides) {
+      slide.style.transform = `translateX(0%)`;
+      updatePagActive();
+      if (!timer) {
+        progressInterval = setInterval(updateProgress, 100);
+        timer = true;
+      }
+    }
+  } else {
+    for (let slide of slides) {
+      slide.style.transform = `translateX(${currentTranslate - 100}%)`;
+      updatePagActive();
+      if (!timer) {
+        progressInterval = setInterval(updateProgress, 100);
+        timer = true;
+      }
+    }
+  }
+}
+
+function addListeners() {
+  leftArrow.addEventListener('click', moveSlides);
+  rightArrow.addEventListener('click', moveSlides);
+  sliderWrapper.addEventListener('touchstart', touchStartAction);
+  sliderWrapper.addEventListener('touchend', touchEndAction);
+  sliderWrapper.addEventListener('touchmove', touchMoveAction);
+  sliderWrapper.addEventListener('mouseenter', pointerEnterAction);
+  sliderWrapper.addEventListener('mouseleave', mouseLeaveAction);
+}
 
 function moveSlides(event) {
   leftArrow.removeEventListener('click', moveSlides);
@@ -60,33 +92,9 @@ function moveSlides(event) {
 
   if (event.clientX === 0) {
     if (rightArrow.contains(event.target)) {
-      if (currentTranslate === -200) {
-        for (let slide of slides) {
-          slide.style.transform = `translateX(0%)`;
-          updatePagActive();
-          if (!timer) {
-            progressInterval = setInterval(updateProgress, 100);
-            timer = true;
-          }
-        }
-      } else {
-        for (let slide of slides) {
-          slide.style.transform = `translateX(${currentTranslate - 100}%)`;
-          updatePagActive();
-          if (!timer) {
-            progressInterval = setInterval(updateProgress, 100);
-            timer = true;
-          }
-        }
-      }
+      configureSlider(currentTranslate);
     }
-    leftArrow.addEventListener('click', moveSlides);
-    rightArrow.addEventListener('click', moveSlides);
-    sliderWrapper.addEventListener('touchstart', touchStartAction);
-    sliderWrapper.addEventListener('touchend', touchEndAction);
-    sliderWrapper.addEventListener('touchmove', touchMoveAction);
-    sliderWrapper.addEventListener('mouseenter', pointerEnterAction);
-    sliderWrapper.addEventListener('mouseleave', mouseLeaveAction);
+    addListeners();
     return;
   }
 
@@ -97,13 +105,7 @@ function moveSlides(event) {
   const pagProgress = document.querySelector('.pag-progress');
   setTimeout(() => {
     pagProgress.remove();
-    leftArrow.addEventListener('click', moveSlides);
-    rightArrow.addEventListener('click', moveSlides);
-    sliderWrapper.addEventListener('touchstart', touchStartAction);
-    sliderWrapper.addEventListener('touchend', touchEndAction);
-    sliderWrapper.addEventListener('touchmove', touchMoveAction);
-    sliderWrapper.addEventListener('mouseenter', pointerEnterAction);
-    sliderWrapper.addEventListener('mouseleave', mouseLeaveAction);
+    addListeners();
   }, 100);
 
   if (leftArrow.contains(event.target)) {
@@ -127,27 +129,9 @@ function moveSlides(event) {
       }
     }
   } else if (rightArrow.contains(event.target)) {
-    if (currentTranslate === -200) {
-      for (let slide of slides) {
-        slide.style.transform = `translateX(0%)`;
-        updatePagActive();
-        if (!timer) {
-          progressInterval = setInterval(updateProgress, 100);
-          timer = true;
-        }
-      }
-    } else {
-      for (let slide of slides) {
-        slide.style.transform = `translateX(${currentTranslate - 100}%)`;
-        updatePagActive();
-        if (!timer) {
-          progressInterval = setInterval(updateProgress, 100);
-          timer = true;
-        }
-      }
-    }
+    configureSlider(currentTranslate);
   }
-  document.querySelector('.pag-active').insertAdjacentHTML('afterbegin', '<div class="pag-progress style=" style="width: 0%;"></div>');
+  document.querySelector('.pag-active').insertAdjacentHTML('afterbegin', '<div class="pag-progress style=" style="width: 0;"></div>');
 }
 
 function checkSlideTranslate() {
@@ -165,19 +149,19 @@ function updatePagActive() {
   const slidesTranslate = checkSlideTranslate();
   switch (slidesTranslate) {
     case 0:
-      pags[0].classList.add('pag-active');
-      pags[1].classList.remove('pag-active');
-      pags[2].classList.remove('pag-active');
+      paginations[0].classList.add('pag-active');
+      paginations[1].classList.remove('pag-active');
+      paginations[2].classList.remove('pag-active');
       break;
     case -100:
-      pags[1].classList.add('pag-active');
-      pags[0].classList.remove('pag-active');
-      pags[2].classList.remove('pag-active');
+      paginations[1].classList.add('pag-active');
+      paginations[0].classList.remove('pag-active');
+      paginations[2].classList.remove('pag-active');
       break;
     case -200:
-      pags[2].classList.add('pag-active');
-      pags[0].classList.remove('pag-active');
-      pags[1].classList.remove('pag-active');
+      paginations[2].classList.add('pag-active');
+      paginations[0].classList.remove('pag-active');
+      paginations[1].classList.remove('pag-active');
       break;
     default:
       return;
@@ -208,7 +192,7 @@ function nextSlideAuto() {
   rightArrow.dispatchEvent(clickEvent);
   setTimeout(() => {
     document.querySelector('.pag-progress').remove();
-    document.querySelector('.pag-active').insertAdjacentHTML('afterbegin', '<div class="pag-progress" style="width: 0%;"></div>');
+    document.querySelector('.pag-active').insertAdjacentHTML("afterbegin", '<div class="pag-progress" style="width: 0;"></div>');
   }, 100);
 }
 
